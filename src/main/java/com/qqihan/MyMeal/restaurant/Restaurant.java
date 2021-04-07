@@ -11,5 +11,5 @@ import lombok.Setter;
 public class Restaurant {
 
     @DynamoDBHashKey(attributeName = "restaurantName")
-    String restaurantName;
+    private String restaurantName;
 }

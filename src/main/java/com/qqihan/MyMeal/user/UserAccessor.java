@@ -1,4 +1,4 @@
-package com.qqihan.MyMeal.restaurant;
+package com.qqihan.MyMeal.user;
 
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper;
 import lombok.AllArgsConstructor;
@@ -7,11 +7,11 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 @AllArgsConstructor
-public class RestaurantAccessor {
+public class UserAccessor {
 
     private final DynamoDBMapper mapper;
 
-    public Restaurant getRestaurantByRestaurantName(@NonNull final String restaurantName) {
-        return mapper.load(Restaurant.class, restaurantName);
+    public User getUserByUserName(@NonNull final String userName) {
+        return mapper.load(User.class, userName);
     }
 }

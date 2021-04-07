@@ -13,8 +13,4 @@ public class RestaurantService {
     public Restaurant getRestaurantByRestaurantName(@NonNull final String restaurantName) {
         return accessor.getRestaurantByRestaurantName(restaurantName);
     }
-
-    public Restaurant buildRestaurant(@NonNull final String restaurantName) {
-        return new Restaurant();
-    }
 }
