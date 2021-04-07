@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.RestController;
 @AllArgsConstructor
 public class DashboardController {
 
-    private RecommendService recommendService;
-    private RestaurantService restaurantService;
+    private final RecommendService recommendService;
+    private final RestaurantService restaurantService;
 
     @GetMapping("/getDashboard")
     public Dashboard getDashboard(@RequestParam(value = "username") String username) {
@@ -22,13 +22,12 @@ public class DashboardController {
 
     @GetMapping("/getRecommendedRestaurant")
     public Restaurant getRecommendedRestaurant(@RequestParam(value = "username") String username) {
-        return recommendService.getRecommendedRestaurant(username);
+        return recommendService.getRecommendedRestaurantFromLikes(username);
     }
 
     @GetMapping("/saveRestaurant")
     public boolean saveRestaurant(@RequestParam(value = "username") String username,
                                   @RequestParam(value = "restaurantName") String restaurantName) {
-        final Restaurant restaurant = restaurantService.buildRestaurant(restaurantName);
-        return restaurantService.saveRestaurant(username, restaurant);
+        return true;
     }
 }

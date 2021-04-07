@@ -6,18 +6,15 @@ import lombok.AllArgsConstructor;
 import lombok.NonNull;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-import java.util.Random;
-
 @Service
 @AllArgsConstructor
 public class RecommendService {
 
-    private RestaurantService restaurantService;
+    private final RestaurantService restaurantService;
 
-    public Restaurant getRecommendedRestaurant(@NonNull final String username) {
-        final List<Restaurant> restaurantList = restaurantService.getRestaurantListByUsername(username);
-        final Random random = new Random();
-        return restaurantList.get(random.nextInt(restaurantList.size()));
+    public Restaurant getRecommendedRestaurantFromLikes(@NonNull final String username) {
+        // TODO: get restaurant name list from UserLikes table;
+        // TODO: get restaurant entities from RestaurantService;
+        return null;
     }
 }

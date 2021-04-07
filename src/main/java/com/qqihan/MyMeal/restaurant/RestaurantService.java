@@ -1,25 +1,20 @@
 package com.qqihan.MyMeal.restaurant;
 
+import lombok.AllArgsConstructor;
 import lombok.NonNull;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-
 @Service
+@AllArgsConstructor
 public class RestaurantService {
 
-    public List<Restaurant> getRestaurantListByUsername(@NonNull final String username) {
-        Restaurant restaurant1 = new Restaurant("spicyCity");
-        Restaurant restaurant2 = new Restaurant("happyLemon");
-        return List.of(restaurant1, restaurant2);
-    }
+    private final RestaurantAccessor accessor;
 
-    public boolean saveRestaurant(@NonNull final String username,
-                                  @NonNull final Restaurant restaurant) {
-        return true;
+    public Restaurant getRestaurantByRestaurantName(@NonNull final String restaurantName) {
+        return accessor.getRestaurantByRestaurantName(restaurantName);
     }
 
     public Restaurant buildRestaurant(@NonNull final String restaurantName) {
-        return new Restaurant(restaurantName);
+        return new Restaurant();
     }
 }
