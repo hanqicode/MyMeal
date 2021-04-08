@@ -10,7 +10,7 @@ public class UserService {
 
     private final UserAccessor accessor;
 
-    public User getUserByUserName(@NonNull final String userName) {
-        return accessor.getUserByUserName(userName);
+    public User getUserByUsername(@NonNull final String username) {
+        return accessor.getUserByUsername(username);
     }
 }

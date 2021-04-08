@@ -11,7 +11,7 @@ public class UserAccessor {
 
     private final DynamoDBMapper mapper;
 
-    public User getUserByUserName(@NonNull final String userName) {
-        return mapper.load(User.class, userName);
+    public User getUserByUsername(@NonNull final String username) {
+        return mapper.load(User.class, username);
     }
 }

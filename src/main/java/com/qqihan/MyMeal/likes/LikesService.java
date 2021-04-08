@@ -12,7 +12,7 @@ public class LikesService {
 
     private final LikesAccessor accessor;
 
-    public List<Likes> getAllUserLikesByUserName(@NonNull final String userName) {
-        return accessor.getAllUserLikesByUserName(userName);
+    public List<Likes> getAllUserLikesByUsername(@NonNull final String username) {
+        return accessor.getAllUserLikesByUsername(username);
     }
 }

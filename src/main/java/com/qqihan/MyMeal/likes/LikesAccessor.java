@@ -14,9 +14,9 @@ public class LikesAccessor {
 
     private final DynamoDBMapper mapper;
 
-    public List<Likes> getAllUserLikesByUserName(@NonNull final String userName) {
+    public List<Likes> getAllUserLikesByUsername(@NonNull final String username) {
         final Likes likes = new Likes();
-        likes.setUserName(userName);
+        likes.setUsername(username);
 
         final DynamoDBQueryExpression<Likes> queryExpression = new DynamoDBQueryExpression<Likes>()
                 .withHashKeyValues(likes);

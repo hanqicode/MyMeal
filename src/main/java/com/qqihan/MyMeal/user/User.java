@@ -11,8 +11,8 @@ import lombok.Setter;
 @DynamoDBTable(tableName = "Users")
 public class User {
 
-    @DynamoDBHashKey(attributeName = "userName")
-    private String userName;
+    @DynamoDBHashKey(attributeName = "username")
+    private String username;
 
     @DynamoDBAttribute(attributeName = "password")
     private String password;

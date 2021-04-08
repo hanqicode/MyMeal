@@ -14,18 +14,18 @@ public class DashboardController {
     private final RecommendService recommendService;
 
     @GetMapping("/getDashboard")
-    public Dashboard getDashboard(@RequestParam(value = "userName") String userName) {
-        return new Dashboard(userName);
+    public Dashboard getDashboard(@RequestParam(value = "username") String username) {
+        return new Dashboard(username);
     }
 
     @GetMapping("/getRecommendedRestaurant")
-    public Restaurant getRecommendedRestaurant(@RequestParam(value = "userName") String userName) {
-        return recommendService.getRecommendedRestaurantFromLikes(userName);
+    public Restaurant getRecommendedRestaurant(@RequestParam(value = "username") String username) {
+        return recommendService.getRecommendedRestaurantFromLikes(username);
     }
 
     @GetMapping("/saveRestaurant")
     public boolean saveRestaurant(@RequestParam(value = "username") String username,
-                                  @RequestParam(value = "restaurantName") String restaurantName) {
+                                  @RequestParam(value = "restaurant_name") String restaurantName) {
         return true;
     }
 }
