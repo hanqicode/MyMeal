@@ -15,4 +15,9 @@ public class LikesService {
     public List<Likes> getAllUserLikesByUsername(@NonNull final String username) {
         return accessor.getAllUserLikesByUsername(username);
     }
+
+    public boolean likeRestaurant(@NonNull final String username,
+                                  @NonNull final String restaurantName) {
+        return accessor.likeRestaurant(username, restaurantName);
+    }
 }

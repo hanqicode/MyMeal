@@ -23,4 +23,14 @@ public class LikesAccessor {
 
         return mapper.query(Likes.class, queryExpression);
     }
+
+    public boolean likeRestaurant(@NonNull final String username,
+                                  @NonNull final String restaurantName) {
+        final Likes likes = new Likes();
+        likes.setUsername(username);
+        likes.setRestaurantName(restaurantName);
+
+        mapper.save(likes);
+        return true;
+    }
 }
