@@ -18,11 +18,6 @@ public class DashboardController {
     private final RestaurantService restaurantService;
     private final LikesService likesService;
 
-    @GetMapping("/getDashboard")
-    public Dashboard getDashboard(@RequestParam(value = "username") @NonNull final String username) {
-        return new Dashboard(username);
-    }
-
     @GetMapping("/getRecommendedRestaurant")
     public Restaurant getRecommendedRestaurant(@RequestParam(value = "username") @NonNull final String username) {
         return recommendService.getRecommendedRestaurantFromLikes(username);
